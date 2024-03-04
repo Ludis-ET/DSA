@@ -22,5 +22,17 @@ Output: 19
 Explanation: You can exchange 4 empty bottles to get 1 full water bottle. 
 Number of water bottles you can drink: 15 + 3 + 1 = 19.
 """
+numBottles = 5
+numExchange = 5
 
-
+drink = numBottles
+empty = numBottles
+count = 1
+print(drink)
+while empty > 0:
+    empty -= 1
+    if count % numExchange == 0:
+        drink += 1
+        empty += 1
+    count += 1
+print(drink)
