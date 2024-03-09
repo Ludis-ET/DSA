@@ -12,6 +12,7 @@ class SLinkedList:
         while node:
             yield node
             node = node.next
+    # adding values
     def insert(self, value , location):
         new = Node(value)
         if self.head is None:
@@ -35,7 +36,14 @@ class SLinkedList:
                 temp.next = new
                 new.next = next
 
-
+    def values(self):
+        if self.head == None:
+            print("No values found")
+        else:
+            node = self.head
+            while node.next != None:
+                print(node.value,end=", ")
+                node = node.next
 link = SLinkedList()
 link.insert(1,0)
 link.insert(1,0)
@@ -45,3 +53,4 @@ link.insert(1,0)
 link.insert(1,0)
 link.insert(2,-1)
 print([node.value for node in link])
+print(link.values())
